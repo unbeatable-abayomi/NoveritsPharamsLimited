@@ -1,6 +1,6 @@
 ﻿namespace NoveritsPharamsLimited
 {
-    class Medicine
+   public abstract class Medicine
     {
 
         private string mediCode;
@@ -72,7 +72,20 @@
                 batchNum = value;
             }
         }
+       
+        public int Print(int code)
+        {
+            return Quantity;
+        }
+        public string Print(string name,int code)
+        {
+            return base.ToString();
+        }
 
+        public string Print()
+        {
+            return $"Medicine Name: {MedicineName} \n Medicine Code: {MedicineCode} \n Manufactuer Name:{ManufactuerName}\n Unit Price:{UnitPrice}\n : Quantity : {Quantity} \n BatchNumber: {BatchNumber}";
+        }
 
     }
 }

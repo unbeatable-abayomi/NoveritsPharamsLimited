@@ -71,5 +71,10 @@ namespace NoveritsPharamsLimited
                 region = value;
             }
         }
+
+        public string Display()
+        {
+            return$"Medicine Code: {MedicineCode}\n Quatity Sold";
+        }
     }
 }
