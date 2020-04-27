@@ -74,15 +74,15 @@ namespace NoveritsPharamsLimited
         public string Display(int code)
         {
             
-            double differnce = PlannedSales - ActualSales;
+            double differnce = ActualSales - PlannedSales;
             if (differnce > 0)
             {
-                return $"Sales for Medicine with code good Expectation Exceeded :{code} is {differnce}";
+                return $"Sales for Medicine is good Expectation Exceeded :{code} is {differnce}";
             }else if(differnce < 0)
             {
-                return $"Sales for Medicine with code bad Below Expectation:{code} is {differnce}";
+                return $"Sales for Medicine is bad Below Expectation:{code} is {differnce}";
             }
-            return $"Fair Expectation Meet{differnce}";
+            return $"Fair Expectation Meet";
            
         }
 

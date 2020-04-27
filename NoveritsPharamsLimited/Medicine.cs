@@ -1,18 +1,18 @@
 ﻿namespace NoveritsPharamsLimited
 {
-   public abstract class Medicine
+    class Medicine
     {
 
         private string mediCode;
         private string mediName;
         private string manuName;
         private double unitPrc;
-        private int quanty;
+        private int quantity;
         private string batchNum;
-        //private string Maundate;
-        //private string expriydate;
+        public Date ManufactureDate { get; set; }
+        public Date ExpiryDate { get; set; }
 
-        public Medicine(string mediCde, string mediNme, string mauNme, double untPrc, int qunt, string batNum)
+        public Medicine(string mediCde, string mediNme, string mauNme, double untPrc, int qunt, string batNum,Date manufacture,Date expiry)
         {
             MedicineCode = mediCde;
             MedicineName = mediNme;
@@ -20,9 +20,8 @@
             UnitPrice = untPrc;
             Quantity = qunt;
             BatchNumber = batNum;
-
-
-
+            ManufactureDate = manufacture;
+            ExpiryDate = expiry;
         }
 
         public string MedicineCode
@@ -54,12 +53,12 @@
         }
         public int Quantity
         {
-            get { return quanty; }
+            get { return quantity; }
             private set
             {
                 if (value > 0)
                 {
-                    quanty = value;
+                    quantity = value;
                 }
             }
         }
@@ -94,7 +93,7 @@
 
         public string Print()
         {
-            return $"Medicine Name: {MedicineName} \n Medicine Code: {MedicineCode} \n Manufactuer Name:{ManufactuerName}\n Unit Price:{UnitPrice}\n : Quantity : {Quantity} \n BatchNumber: {BatchNumber}";
+            return $"Medicine Name: {MedicineName} \n Medicine Code: {MedicineCode} \n Manufactuer Name:{ManufactuerName}\n Unit Price:{UnitPrice}\n : Quantity : {Quantity} \n BatchNumber: {BatchNumber}\n Manufactuer Date:{ ManufactureDate}\n Expiry Date:{ExpiryDate}";
         }
 
     }
