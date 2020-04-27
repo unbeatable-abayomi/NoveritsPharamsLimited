@@ -72,7 +72,17 @@
                 batchNum = value;
             }
         }
-       
+
+        public int IncreaseStock(int code)
+        { 
+            if(Quantity == 0)
+            {
+                Quantity = Quantity + 50;
+            }
+            return Quantity;
+        }
+
+
         public int Print(int code)
         {
             return Quantity;

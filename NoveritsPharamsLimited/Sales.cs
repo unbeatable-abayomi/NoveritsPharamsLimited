@@ -71,10 +71,24 @@ namespace NoveritsPharamsLimited
                 region = value;
             }
         }
+        public string Display(int code)
+        {
+            
+            double differnce = PlannedSales - ActualSales;
+            if (differnce > 0)
+            {
+                return $"Sales for Medicine with code good Expectation Exceeded :{code} is {differnce}";
+            }else if(differnce < 0)
+            {
+                return $"Sales for Medicine with code bad Below Expectation:{code} is {differnce}";
+            }
+            return $"Fair Expectation Meet{differnce}";
+           
+        }
 
         public string Display()
         {
-            return$"Medicine Code: {MedicineCode}\n Quatity Sold";
+            return$"Medicine Code: {MedicineCode}\n Quatity Sold: {QuantitySold}\n Planned Sales: {PlannedSales}\n Actual Sale: {ActualSales}\n Region :{Region}\n";
         }
     }
 }
