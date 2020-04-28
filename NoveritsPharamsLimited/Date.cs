@@ -10,29 +10,24 @@ namespace NoveritsPharamsLimited
         private int month;
         private int Year { get; set; }
 
-
-
-
-
-
         public Date(int theDay, int theMonth, int theYear)
         {
             Day = theDay;
             Month = theMonth;
             Year = theYear;
-            Console.WriteLine($"Date Construtor Called {this}");
+           
         }
 
         public int Month
         {
             get { return month; }
-            set
+          private  set
             {
                 if ((value > 0) && (value <= 12))
                 {
 
                     month = value;
-                    Console.WriteLine(Month);
+                  
                 }
                 else
                 {
@@ -47,27 +42,31 @@ namespace NoveritsPharamsLimited
         public int Day
         {
             get { return day; }
-            set
+           private set
             {
-
-               // int[] DaysPerMonth = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
-
-
-                
-                //if ((value > 0) && (value <= DaysPerMonth[Month - 1]))
-                  if(value > 0)
+                if (value > 0 && value <= 31)
                 {
                     day = value;
 
                 }
+                else
+                {
+                    throw new System.ArgumentOutOfRangeException("Out of range");
+                }
                 /*
-                else if ((Month == 2 && value == 29) && (Year % 4 == 0 || Year % 400 == 0) && (Year % 100 != 0))
+                if((Day >=1 && Day <=31) && (Month == 1 || Month == 2 || Month == 3 || Month == 5 || Month == 7 || Month == 8 || Month == 10|| Month == 12))
+                {
+                    day = value;
+                }else if ((Day >= 1 && Day <= 30) && (Month == 4 || Month == 6 || Month == 9 || Month == 11))
+                {
+                    day = value;
+                }else if (Day == 29 && Month == 2 && (Year % 400 == 0 || (Year % 4 == 0 && Year % 100 !=0))) 
                 {
                     day = value;
                 }
                 else
                 {
-                    throw new System.ArgumentOutOfRangeException("Day Value out of Range");
+                    throw new System.ArgumentOutOfRangeException("Out of range");
                 }
                 */
 
